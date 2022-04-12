@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
+    "clean": "rm -rf node_modules .next yarn.lock package-lock.json && yarn cache clean",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --fix .",
