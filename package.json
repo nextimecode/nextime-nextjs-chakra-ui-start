@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "clean": "rm -rf node_modules .next yarn.lock package-lock.json && yarn cache clean",
-    "build": "jest:once:group:no-integration && next build",
+    "build": "yarn test && next build",
     "start": "next start",
     "lint": "eslint --fix .",
     "precommit": "yarn lint",
@@ -15,7 +15,7 @@
     "go": "yarn prepush && yarn dev",
     "prepare": "husky install",
     "postinstall": "husky install",
-    "test": "jest --watch"
+    "test": "jest"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.2.1",
