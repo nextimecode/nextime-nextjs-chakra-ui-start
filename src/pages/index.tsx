@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import NextButton from '../components/atoms/NextButton'
+import NextButton from '../components/atoms/NextButton/'
 
 export default function Home() {
   return (
