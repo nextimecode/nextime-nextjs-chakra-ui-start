@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import NextButton from '../NextButton'
+import NextButton from '../NextButton/index'
 
 describe('NextButton', () => {
   it('renders correctly', () => {
