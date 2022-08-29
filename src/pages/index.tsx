@@ -3,18 +3,32 @@ import Head from 'next/head'
 import Image from 'next/image'
 import NextButton from '../components/atoms/nextButton'
 import { gql, useQuery } from '@apollo/client'
+import { Box, Text } from '@chakra-ui/react'
 
 const GET_LESSONS_QUERY = gql`
-  query {
-    lessons {
+  query GetLessons {
+    lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
       id
+      lessonType
+      availableAt
       title
+      slug
     }
   }
 `
 
+interface GetLessonsQueryResponse {
+  lessons: {
+    id: string
+    title: string
+    slug: string
+    availableAt: Date
+    type: 'live' | 'class'
+  }[]
+}
+
 export default function Home() {
-  const { data } = useQuery(GET_LESSONS_QUERY)
+  const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY)
   return (
     <div>
       <Head>
@@ -27,6 +41,14 @@ export default function Home() {
         <NextButton>{'<Faça um orçamento gratuito/>'}</NextButton>
         <NextButton>White</NextButton>
         <NextButton bg="primary-dark">Dark</NextButton>
+        {data?.lessons.map(lesson => {
+          return (
+            <Box key={lesson.id}>
+              <Text>{lesson.title}</Text>
+              <Text>{lesson.slug}</Text>
+            </Box>
+          )
+        })}
       </main>
 
       <footer>
