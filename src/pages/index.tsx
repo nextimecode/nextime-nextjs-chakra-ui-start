@@ -38,9 +38,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <NextButton>{'<Faça um orçamento gratuito/>'}</NextButton>
-        <NextButton>White</NextButton>
-        <NextButton bg="primary-dark">Dark</NextButton>
+        <NextButton>{'Garantir minha participação'}</NextButton>
         {data?.lessons.map(lesson => {
           return (
             <Box key={lesson.id}>

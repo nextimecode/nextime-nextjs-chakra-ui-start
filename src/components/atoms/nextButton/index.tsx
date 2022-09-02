@@ -2,10 +2,10 @@ import React, { PropsWithChildren } from 'react'
 import { Button } from '@chakra-ui/react'
 
 type Props = {
-  bg?: 'primary' | 'primary-dark' | 'white' | 'dark' | undefined
+  bg?: 'next-blue.400' | 'next-dark.200' | undefined
 }
 
-const NextButton = ({ bg = 'primary', children }: PropsWithChildren<Props>) => (
+const NextButton = ({ bg = 'next-blue.400', children }: PropsWithChildren<Props>) => (
   <Button bg={bg}>{children}</Button>
 )
 
