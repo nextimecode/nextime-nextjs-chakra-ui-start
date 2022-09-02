@@ -1,7 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import NextButton from '../components/atoms/nextButton'
+import NextButton from '../components/atoms/NextButton'
 import { gql, useQuery } from '@apollo/client'
 import { Box, Text } from '@chakra-ui/react'
 
@@ -22,7 +22,7 @@ interface GetLessonsQueryResponse {
     id: string
     title: string
     slug: string
-    availableAt: Date
+    availableAt: string
     type: 'live' | 'class'
   }[]
 }
@@ -46,6 +46,7 @@ export default function Home() {
             <Box key={lesson.id}>
               <Text>{lesson.title}</Text>
               <Text>{lesson.slug}</Text>
+              <Text>{lesson.availableAt}</Text>
             </Box>
           )
         })}
