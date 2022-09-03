@@ -2,33 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import NextButton from '../components/atoms/NextButton'
-import { gql, useQuery } from '@apollo/client'
 import { Box, Text } from '@chakra-ui/react'
-
-const GET_LESSONS_QUERY = gql`
-  query GetLessons {
-    lessons(orderBy: availableAt_ASC, stage: PUBLISHED) {
-      id
-      lessonType
-      availableAt
-      title
-      slug
-    }
-  }
-`
-
-interface GetLessonsQueryResponse {
-  lessons: {
-    id: string
-    title: string
-    slug: string
-    availableAt: string
-    type: 'live' | 'class'
-  }[]
-}
+import { useGetLessonsQuery } from 'graphql/generated'
 
 export default function Home() {
-  const { data } = useQuery<GetLessonsQueryResponse>(GET_LESSONS_QUERY)
+  const { data } = useGetLessonsQuery()
   return (
     <div>
       <Head>
