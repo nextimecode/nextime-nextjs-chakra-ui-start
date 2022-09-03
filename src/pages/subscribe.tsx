@@ -1,5 +1,4 @@
 import { Box, Flex, Heading, Input, Text } from '@chakra-ui/react'
-import NextButton from '../components/atoms/NextButton'
 import { NextLogo } from '../components/atoms/NextLogo'
 export default function Subscribe() {
   return (
@@ -48,7 +47,6 @@ export default function Subscribe() {
                 px={5}
                 height={14}
               />
-              <NextButton>{'Garantir minha participação'}</NextButton>
             </Box>
           </form>
         </Box>
