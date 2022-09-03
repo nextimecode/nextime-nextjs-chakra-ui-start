@@ -5,6 +5,9 @@ interface NextButtonProps {
   bg?: 'next-blue.400' | 'next-dark.200' | undefined
 }
 
-export function NextButton({ bg = 'next-blue.400', children }: PropsWithChildren<NextButtonProps>) {
+export default function NextButton({
+  bg = 'next-blue.400',
+  children
+}: PropsWithChildren<NextButtonProps>) {
   return <Button bg={bg}>{children}</Button>
 }
