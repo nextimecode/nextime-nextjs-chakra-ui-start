@@ -1,7 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import NextButton from '../components/atoms/NextButton'
 import { useGetLessonsQuery } from '../graphql/generated'
 import { Box, Text } from '@chakra-ui/react'
 
@@ -16,7 +15,6 @@ export default function Home() {
       </Head>
 
       <main>
-        <NextButton>{'Garantir minha participação'}</NextButton>
         {data?.lessons.map(lesson => {
           return (
             <Box key={lesson.id}>
