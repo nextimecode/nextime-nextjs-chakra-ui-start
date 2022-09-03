@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Input, Text } from '@chakra-ui/react'
-import { NextButton } from 'components/atoms/NextButton'
-import { NextLogo } from 'components/atoms/NextLogo'
+import { NextButton } from '../components/atoms/NextButton'
+import { NextLogo } from '../components/atoms/NextLogo'
 export default function Subscribe() {
   return (
     <Flex minHeight={'100vh'} flexDirection={'column'} alignItems="center">

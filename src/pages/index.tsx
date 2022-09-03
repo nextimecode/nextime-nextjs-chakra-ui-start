@@ -2,8 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import { NextButton } from '../components/atoms/NextButton'
+import { useGetLessonsQuery } from '../graphql/generated'
 import { Box, Text } from '@chakra-ui/react'
-import { useGetLessonsQuery } from 'graphql/generated'
 
 export default function Home() {
   const { data } = useGetLessonsQuery()

@@ -11,7 +11,7 @@ import '@fontsource/open-sans/700.css'
 
 import theme from '../../theme/'
 import { ApolloProvider } from '@apollo/client'
-import { client } from 'lib/apollo'
+import { client } from '../lib/apollo'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
