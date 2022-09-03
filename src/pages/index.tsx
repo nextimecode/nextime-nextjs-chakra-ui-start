@@ -1,9 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import NextButton from '../components/atoms/nextButton'
+import { useGetLessonsQuery } from '../graphql/generated'
+import { Box, Text } from '@chakra-ui/react'
 
 export default function Home() {
+  const { data } = useGetLessonsQuery()
   return (
     <div>
       <Head>
@@ -13,9 +15,15 @@ export default function Home() {
       </Head>
 
       <main>
-        <NextButton>{'<Faça um orçamento gratuito/>'}</NextButton>
-        <NextButton>White</NextButton>
-        <NextButton bg="primary-dark">Dark</NextButton>
+        {data?.lessons.map(lesson => {
+          return (
+            <Box key={lesson.id}>
+              <Text>{lesson.title}</Text>
+              <Text>{lesson.slug}</Text>
+              <Text>{lesson.availableAt}</Text>
+            </Box>
+          )
+        })}
       </main>
 
       <footer>
