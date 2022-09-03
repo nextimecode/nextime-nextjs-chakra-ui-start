@@ -5,8 +5,6 @@ type Props = {
   bg?: 'next-blue.400' | 'next-dark.200' | undefined
 }
 
-const NextButton = ({ bg = 'next-blue.400', children }: PropsWithChildren<Props>) => (
-  <Button bg={bg}>{children}</Button>
-)
-
-export default NextButton
+export function NextButton({ bg = 'next-blue.400', children }: PropsWithChildren<Props>) {
+  return <Button bg={bg}>{children}</Button>
+}
